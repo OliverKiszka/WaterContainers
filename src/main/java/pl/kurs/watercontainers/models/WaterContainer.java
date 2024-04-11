@@ -3,10 +3,13 @@ package pl.kurs.watercontainers.models;
 import pl.kurs.watercontainers.exceptions.InvalidCapacityException;
 import pl.kurs.watercontainers.exceptions.InvalidWaterLevelException;
 
-public class WaterContainer {
+import java.io.Serializable;
 
-    private String name;
-    private double maxCapacity;
+public class WaterContainer implements Serializable {
+    private static final long serialVersionUID = 1L;
+
+    private final String name;
+    private final double maxCapacity;
     private double waterLevel;
 
     private WaterContainer(String name, double maxCapacity, double waterLevel) {
