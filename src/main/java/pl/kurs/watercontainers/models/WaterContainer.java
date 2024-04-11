@@ -47,6 +47,13 @@ public class WaterContainer implements Serializable {
         waterLevel -= value;
 
     }
+    public void pourWater(WaterContainer source, double value){
+        if (value <= 0) {
+            throw new InvalidWaterAmountException("Water value should be more than 0!");
+        }
+        this.pourOutWater(value);
+        source.addWater(value);
+    }
 
 
     @Override
