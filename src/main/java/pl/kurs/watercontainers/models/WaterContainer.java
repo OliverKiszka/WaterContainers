@@ -29,7 +29,7 @@ public class WaterContainer implements Serializable {
 
     public void addWater(double value) {
         if (value <= 0) {
-            throw new InvalidWaterAmountException("Water value should be more than 0");
+            throw new InvalidWaterAmountException("Water value should be more than 0!");
         }
         if (waterLevel + value > maxCapacity) {
             throw new InvalidWaterAmountException("Too much water to add!");
@@ -37,6 +37,16 @@ public class WaterContainer implements Serializable {
         waterLevel += value;
     }
 
+    public void pourOutWater(double value){
+        if (value <= 0) {
+            throw new InvalidWaterAmountException("Water value should be more than 0!");
+        }
+        if (waterLevel - value < 0){
+            throw new InvalidWaterAmountException("Too much water to pour out!");
+        }
+        waterLevel -= value;
+
+    }
 
 
     @Override
