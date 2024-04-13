@@ -55,6 +55,9 @@ public class WaterContainer implements Serializable {
         source.addWater(value);
     }
 
+    public double getWaterLevel() {
+        return waterLevel;
+    }
 
     @Override
     public String toString() {
